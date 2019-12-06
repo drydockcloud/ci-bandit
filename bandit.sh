@@ -13,4 +13,4 @@ if [ -r /src/bandit-baseline.json ]; then
     ARGS="${ARGS} -b /src/bandit-baseline.json"
 fi
 
-exec bandit ${ARGS} -r /src
+exec bandit ${ARGS} -r /target

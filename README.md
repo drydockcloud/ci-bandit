@@ -1,14 +1,17 @@
 # Scan Python code with https://github.com/PyCQA/bandit
 
-## Usage
+## Example
+
+Assuming scan configuration files are located in `config/`, source to be scanned is in `src/`,
+and `results/` exists:
 
 ```
-$ docker run -v $PWD/src:/src -v $PWD/results:/results ci-bandit
+$ docker run -v $PWD/config:/src -v $PWD/src:/target -v $PWD/results:/results ci-bandit
 ```
 
 ### Defaults:
 
-- Code in the `/src` directory is scanned recursively
+- Code in the `/target` directory is scanned recursively
 - Report is written in JSON format to `/results/bandit.json`
 - Configuration is read from `/src/bandit.yaml`, if present.
 - Baseline is read from `/src/bandit-baseline.json`, if present.
